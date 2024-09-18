@@ -90,18 +90,19 @@ External Gateway Integrations:
 Supports payment gateway integrations for card payments, net banking, etc.
 
 Assumptions
-User Base: The system needs to handle at least 100 million active users.
-Transactions: It should handle a peak load of 1 million transactions per second during high-traffic events.
-External Dependencies: Payments may fail due to issues with banks, networks, or
+- User Base: The system needs to handle at least 100 million active users.
+- Transactions: It should handle a peak load of 1 million transactions per second during high-traffic events.
+- External Dependencies: Payments may fail due to issues with banks, networks, or
 payment gateways, so the system must handle failures gracefully and ensure refunds or retries.
-Class Diagram Overview
-User: Handles user data (userID, phoneNumber, balance).
-Transaction: Tracks transactions (transactionID, sender, receiver, amount, status).
-Wallet: Manages user’s wallet (balance, top-up, withdrawal).
-PaymentGateway: Interacts with external payment services (UPI, bank, credit/debit cards).
-Notification: Sends notifications (SMS, push, email).
-BillPayment: Manages billers, payment history, and status.
-Refund: Handles failed transactions and refunds.
+
+- Class Diagram Overview
+- User: Handles user data (userID, phoneNumber, balance).
+- Transaction: Tracks transactions (transactionID, sender, receiver, amount, status).
+- Wallet: Manages user’s wallet (balance, top-up, withdrawal).
+- PaymentGateway: Interacts with external payment services (UPI, bank, credit/debit cards).
+- Notification: Sends notifications (SMS, push, email).
+- BillPayment: Manages billers, payment history, and status.
+- Refund: Handles failed transactions and refunds.
 
 
 
