@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Version;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,4 +24,7 @@ public class User {
     private String otp;
     private boolean isLoggedIn;
     private BigDecimal walletBalance;
+
+    @Version
+    private Long version;
 }
