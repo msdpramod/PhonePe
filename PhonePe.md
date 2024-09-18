@@ -108,4 +108,3 @@ payment gateways, so the system must handle failures gracefully and ensure refun
 
 
 
-write Controllers, ObjectMappers, Repositories with JPA, Exceptions, Models, Service Layeers with DB Locks
