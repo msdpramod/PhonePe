@@ -23,29 +23,29 @@ public class PhonePeClient {
     }
 
     public ResponseEntity<String> sendMoney(SendMoneyRequestDTO request) {
-        return restTemplate.postForEntity("http://localhost:8080/api/v1/transaction/send", request, String.class);
+        return restTemplate.postForEntity("http://localhost:8080/transaction/send", request, String.class);
     }
 
     public ResponseEntity<TransactionDTO> getTransactionDetails(UUID transactionId) {
-        return restTemplate.getForEntity("http://localhost:8080/api/v1/transaction/" + transactionId, TransactionDTO.class);
+        return restTemplate.getForEntity("http://localhost:8080/transaction/" + transactionId, TransactionDTO.class);
     }
 
     public ResponseEntity<List> getTransactionHistory(UUID userId) {
-        return restTemplate.getForEntity("http://localhost:8080/api/v1/transaction/history/" + userId, List.class);
+        return restTemplate.getForEntity("http://localhost:8080/transaction/history/" + userId, List.class);
     }
 
     public ResponseEntity<UserDTO> registerUser(UserDTO userDTO) {
-        return restTemplate.postForEntity("http://localhost:8080/api/v1/user/register", userDTO, UserDTO.class);
+        return restTemplate.postForEntity("http://localhost:8080/user/register", userDTO, UserDTO.class);
     }
 
     public ResponseEntity<String> loginUser(String phoneNumber, String otp) {
         UserLoginDTO loginDTO = new UserLoginDTO();
         loginDTO.setPhoneNumber(phoneNumber);
         loginDTO.setOtp(otp);
-        return restTemplate.postForEntity("http://localhost:8080/api/v1/user/login", loginDTO, String.class);
+        return restTemplate.postForEntity("http://localhost:8080/user/login", loginDTO, String.class);
     }
 
     public ResponseEntity<String> logoutUser(UUID userId) {
-        return restTemplate.postForEntity("http://localhost:8080/api/v1/user/logout?userId=" + userId, null, String.class);
+        return restTemplate.postForEntity("http://localhost:8080/api/logout?userId=" + userId, null, String.class);
     }
 }
